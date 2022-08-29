@@ -1,0 +1,20 @@
+{
+    "fastapi_app":{
+        "method": "fastapi_app",
+        "args" : {}
+    },
+    "mysql_db":{
+        "method": "mysql_conn",
+        "args" : {
+            "credential_path": "resources/mysql_db.json"
+        }
+    },
+    "redis_conn":{
+        "method": "redis_conn",
+        "args" : {
+            "credential_path": "resources/redis_cache.json"
+        }
+    }
+}
+
+
