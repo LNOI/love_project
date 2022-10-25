@@ -1,4 +1,3 @@
-from tkinter.tix import Tree
 from src.const.global_map import RESOURCE_MAP
 import logging
 from fastapi.responses import HTMLResponse
