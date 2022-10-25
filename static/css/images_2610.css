@@ -162,3 +162,8 @@ img.img_card_notification{
   top: 250px;
   left:  200px;
 }
+
+.form-check-label{
+  font-weight: bold;
+
+}
