@@ -40,7 +40,7 @@ def short_api_log(func:Callable):
 
 def add_api() -> None:
     if "application_api" not in sys.modules:
-        import api_endpoint.application_api
+        import src.api_endpoint.application_api
     if "until_sql" not in sys.modules:
         import src.api_endpoint.until_sql
   

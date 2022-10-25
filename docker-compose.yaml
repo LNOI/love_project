@@ -1,0 +1,19 @@
+version: '3.4' # docker compose version
+
+services:
+  # container name
+  frontend-image2link:
+    # stdin_open: true 
+    # tty: true
+    build:
+      context: .
+      dockerfile: .
+    image: Love
+    container_name: Love
+    volumes:
+      - ${PWD}:/app
+    working_dir: /app
+    entrypoint: ["python3.9", "app.py"]
+    ports:
+      - "80:8000"
+   

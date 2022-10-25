@@ -3,16 +3,17 @@
         "method": "fastapi_app",
         "args" : {}
     },
-    "mysql_db":{
-        "method": "mysql_conn",
-        "args" : {
-            "credential_path": "resources/mysql_db.json"
+    "db_engine": {
+        "method": "db_engine",
+        "args": {
+            "credential_path": "resource/db_dev_credential.json"
         }
     },
     "redis_conn":{
-        "method": "redis_conn",
+        "method": "redis_connection",
         "args" : {
-            "credential_path": "resources/redis_cache.json"
+            "host": "test_redis_cache",
+            "port": 6379
         }
     }
 }

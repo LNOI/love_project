@@ -1,0 +1,50 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+header img{
+  width: 100px;
+  height: 100px;
+}
+
+header .title_name > img{
+  margin-top: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+.ml11-main {
+  font-weight: 700;
+  font-size: 3.5em;
+  text-align: center;
+  color: #fff;
+}
+
+.ml11-main .text-wrapper-main {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11-main .line-main {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  
+  transform-origin: 0 50%;
+}
+
+.ml11-main .line1-main { 
+  top: 0; 
+  left: 0;
+}
+
+.ml11-main .letter-main {
+  display: inline-block;
+  line-height: 1em;
+}
+
+

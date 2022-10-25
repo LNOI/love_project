@@ -5,70 +5,167 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/images_2610.css')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  
     <title>Document</title>
 </head>
 
 <body>
-    <div class="clock">
-        <div class="date_love">
-            <div class="strip">
-                {% for i in range(3) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+    
+      
+    <video autoplay muted src="static/video/love.mp4" id="video_background">
+    </video>
 
+    <header>
+       
+        <div class="row justify-content-center">
+            <div class="col-1 title_name">
+                <img src="static/img/title/b.png" alt="26" >
             </div>
-            <div class="strip">
-                {% for i in range(10) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+            <div class="col-1 title_name">
+                <img src="static/img/title/u.png" alt="10" >
             </div>
-            <div class="strip">
-                {% for i in range(10)%}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+            <div class="col-1 title_name">
+                <img src="static/img/title/n.png" alt="10" >
             </div>
-        </div>
-        <div class="hr" >
-            <div class="strip">
-                {% for i in range(3) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+            <div class="col-1">
+                <img src="static/img/title/26.png" alt="26" >
+            </div>
+            <div class="col-1">
+                <img src="static/img/title/10.png" alt="10" >
+            </div>
 
+            <div class="col-1 title_name">
+                <img src="static/img/title/m.png" alt="26" >
             </div>
-            <div class="strip">
-                {% for i in range(10) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+            <div class="col-1 title_name">
+                <img src="static/img/title/u.png" alt="10" >
             </div>
-        </div>
-        <div class="min">
-            <div class="strip">
-                {% for i in range(6) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
-            </div>
-            <div class="strip">
-                {% for i in range(10) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
+            <div class="col-1 title_name">
+                <img src="static/img/title/n.png" alt="10" >
             </div>
         </div>
-        <div class="sec">
-            <div class="strip">
-                {% for i in range(6) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
-            </div>
-            <div class="strip">
-                {% for i in range(10) %}
-                <div class="number">{{i}}</div>
-                {% endfor %}
-            </div>
-        </div>
+    </header>
+    
+    <div class="icon-noti-for-you"  type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" >
+        <img src="static/img/icon/letter.png" alt="">
     </div>
-    <script src="{{ url_for('static', path='/js/clock.js')  }}"></script>
+    <div class="container container_box mt-5">
+        <div class="letter_main">
+          
+            <div class="col-6 mt-4 letter_check_accept">
+                <div class="form-check mt-5 ">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="yes" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Em đồng ý cho anh cơ hội nữa không !
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="no">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Em không  đồng ý cho anh cơ hội nữa !
+                    </label>
+                  </div>
+                  
+            </div>
+            <img id="letter_img" src="static/img/letter/1.jpg" alt="" >
+            <img id="swipe_icon" src="static/img/icon/swipe.png" alt="">
+        </div>
+        <div class="row talk-main">
+            <div class="row justify-content-center content-accept mt-4">
+                <div class="col-1 mt-5">
+                    <img  id="noti-send" style="width:100px" src="static/img/icon/letter_send.png" alt="">
+                </div>
+               
+            </div>
+             
+              <img  id="noti-heart" class="mt-5" src="static/img/icon/love-letter.png" alt="">
+              
+        </div>
+       
+        <div class="row">
+            <div class="col messageforyou">
+
+                  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="staticBackdropLabel">Storage Message</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="row card_noftication justify-content-center ">
+                        <div class="col-10">
+                            <div class="card mb-3 card_notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="card-noti-close" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                </svg>
+                                <img  src="#" class="card-img-top img_card_notification"  id="card-noti-thumbnail" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title" id="card-noti-title"></h5>
+                                  <p class="card-text" id="card-noti-text"></p>
+                                  <p class="card-text"><small class="text-muted"  id="card-noti-date"></small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offcanvas-body">
+                        {% for st in storage_message %}
+                            <div class="row message_for_you" id="{{st.id}}">
+                                <div class="col">
+                                    <div class="card mb-3" style="max-width: 540px;">
+                                        <div class="row g-0">
+                                        <div class="col-md-4 justify-content-center">
+                                            <img  src="static/img/ainhu_02.jpg" class="img-fluid  img_thumbnail" alt="..." style="border-radius: 100px; width: 100px; height:100px; margin-top:10px; ">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                            <h5 class="card-title">{{st.title}}</h5>
+                                            <p class="card-text">{{st.contents}}</p>
+                                            <p class="card-text"><small class="text-muted">{{st.date}}</small></p>
+                                            <p class="card-seen"> Seen
+                                                {% for user_seen in st.seen %}
+                                                    <img src={{user_seen}} alt="" width="30px" height="30px" style="border-radius: 30px;">
+                                                {% endfor %}
+                                            </p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+        </div>
+        <div class="row mt-5 container-memory">
+            <ul>
+                {% for m in memory %}
+                    <li style="transform: rotate({{m.rotate}}deg);" >
+                    {% if m.isvideo %}
+                        <video  autoplay muted src="static/img/memory/{{m.link}}" id="video_memory" width="200" >
+                        </video>
+                    {% else %}
+                        <img src="static/img/memory/{{m.link}}" width="200" >
+                    {% endif %}
+
+                    
+                    <p class="mt-2">{{m.date}}</p>
+                    <p  style="width: 200px; font-size: 14px;" class="mt-2">{{m.content}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            
+        </div> 
+    </div>
+
+    
     
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', path='/js/main.js')}}"></script>
 
 </html>
